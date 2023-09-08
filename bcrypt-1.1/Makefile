@@ -1,3 +1,13 @@
+# This file runs the below two commands.
+# $ gcc -O2 -Wall -c main.c blowfish.c rwfile.c keys.c  wrapbf.c wrapzl.c endian.c
+# $ gcc -O2 -Wall -o bcrypt main.o blowfish.o rwfile.o keys.o wrapbf.o endian.o wrapzl.o -L/usr/local/lib -lz
+# Say keys.o checks if keys.c and Makefile, includes.h and other h's are newer newer. If yes, it will run `gcc -O2 -Wall -c keys.c`
+# Since bcrypt or any tag that is first, it will anyway run if only make is given, and of course its deps after it. It is the only one which will run!
+# Say if bcrypt already exists, it will say it is upto date.
+# If the pre-requisite after : if changed say like main.o, then the command is run
+# target : pre-requisite
+# 	commands
+
 DEFAULTS = Makefile includes.h blowfish.h functions.h config.h
 CC = gcc
 CFLAGS = -O2 -Wall 
@@ -5,6 +15,12 @@ COMPILE = ${CC} ${CFLAGS}
 OBJS = main.o blowfish.o rwfile.o keys.o wrapbf.o endian.o wrapzl.o
 LDFLAGS = -L/usr/local/lib -lz 
 PREFIX = /usr/local
+
+#clean_hello:
+#	echo "hello"
+
+#clean:
+#	echo "hi"
 
 bcrypt:	${OBJS} Makefile
 	${COMPILE} -o bcrypt ${OBJS} ${LDFLAGS}
@@ -38,6 +54,6 @@ wrapzl.o:	wrapzl.c ${DEFAULTS}
 endian.o:	endian.c ${DEFAULTS}
 	${COMPILE} -c endian.c
 
-clean:
+clean.o:
 	rm -rf *.o bcrypt bcrypt.core core bcrypt.tgz 
 
