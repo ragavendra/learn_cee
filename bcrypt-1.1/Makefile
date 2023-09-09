@@ -3,8 +3,8 @@
 # $ gcc -O2 -Wall -o bcrypt main.o blowfish.o rwfile.o keys.o wrapbf.o endian.o wrapzl.o -L/usr/local/lib -lz
 # Say keys.o checks if keys.c and Makefile, includes.h and other h's are newer newer. If yes, it will run `gcc -O2 -Wall -c keys.c`
 # Since bcrypt or any tag that is first, it will anyway run if only make is given, and of course its deps after it. It is the only one which will run!
-# Say if bcrypt already exists, it will say it is upto date.
-# If the pre-requisite after : if changed say like main.o, then the command is run
+# Say if bcrypt file already exists, it will say it is upto date. Unless pre req files are newer.
+# If the pre-requisite after : if changed say like main.o, and othe o files, then the command is run
 # target : pre-requisite
 # 	commands
 
