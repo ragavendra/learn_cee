@@ -10,6 +10,29 @@ int main(int argc, char *argv[])
 		  printf("Arg %d is %s\n", i, argv[i]);
 	 }
 
+	 int inpNo;
+	 printf("Enter the size of array: ");
+	 scanf("%d", &inpNo);
+
+	 // int aNos[inpNo];
+	 int *aNos = malloc(sizeof(int) * inpNo);
+	 int inNo;
+
+	 // aNos stores in stack
+	 for(int i = 0; i < inpNo; i++)
+	 {
+		  printf("Enter no:");
+		  scanf("%d", &inNo);
+		  aNos[i] = inNo;
+	 }
+
+	 for(int i = 0; i < inpNo; i++)
+	 {
+		  printf("No: %d \n", *(aNos + i)); // pointer arith
+	 }
+
+	 free(aNos);
+
 	 // printf("try mem");
 	 int no[] = { 1, 6, 10 };
 	 char *q[3];
@@ -36,6 +59,7 @@ int main(int argc, char *argv[])
 		  printf("No is %d\n");
 	 }
 
+	 // stores in heap, can be freed or ml
 	 char *t = malloc(8);
 	 strcpy(t, "aaa");
 	 printf("%s \n", t);
