@@ -1,14 +1,24 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "cus.h"
+#include <assert.h>
+#include <threads.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 {
-	 printf("Print args\n");
+	 SharedVar = 6;
+	 PrintVar(SharedVar);
+	 printf("Print args %d\n", SharedVar);
 	 for(int i = 1; i < argc; i++)
 	 {
 		  printf("Arg %d is %s\n", i, argv[i]);
 	 }
+
+	 // fork(PrintVar(SharedVar));
+
+	 assert(SharedVar > 0);
 
 	 int inpNo;
 	 printf("Enter the size of array: ");
@@ -16,6 +26,7 @@ int main(int argc, char *argv[])
 
 	 // int aNos[inpNo];
 	 int *aNos = malloc(sizeof(int) * inpNo);
+	 int aNos_[inpNo];
 	 int inNo;
 
 	 // aNos stores in stack
@@ -24,12 +35,17 @@ int main(int argc, char *argv[])
 		  printf("Enter no:");
 		  scanf("%d", &inNo);
 		  aNos[i] = inNo;
+		  aNos_[i] = inNo;
 	 }
 
 	 for(int i = 0; i < inpNo; i++)
 	 {
-		  printf("No: %d \n", *(aNos + i)); // pointer arith
+		  printf("No: %d %d\n", *(aNos + i), aNos_[i]); // pointer arith
 	 }
+
+	 // *aNos = malloc(sizeof(int) * inpNo);
+	 // int *aNos_ = calloc(sizeof(int) * (inpNo + 1), sizeof(aNos));
+	 // int *aNos_ = calloc(sizeof(int) * (inpNo + 1), sizeof(aNos));
 
 	 free(aNos);
 
@@ -40,6 +56,7 @@ int main(int argc, char *argv[])
 	 // char *p = "string";
 	 char p[] = "string";
 	 printf("Str :%12.3s: \n",  p);
+	 printf("Inttt :%d: \n",  atoi(p));
 
 	 char *a = p;
 	 *p = 'a';
