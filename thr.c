@@ -38,7 +38,8 @@ int main()
 	 // pthread_join(thr, NULL);
 	 // printf("Thr 1 ended!");
 
-	 // wait for 2nd first
+	 // wait for second one to finish, since first can take lock first, 
+	 // both thrds will wait till this
 	 pthread_join(thr_2, NULL);
 
 	 printf("Threads ended!");
