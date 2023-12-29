@@ -7,33 +7,50 @@ struct node_
     struct node_ *next;
 };
 
+struct node_ *initializeFirstEle(int no, struct node_ *linkList)
+{	 
+	 linkList->val = no;
+	 return linkList;
+}
+
 struct node_ *pushHead_(int no, struct node_ *linkList)
 {
-    struct node_ *new_ = malloc(sizeof(struct node_));
-    new_->val = no; // or (*new_).val de reference
-    new_->next = linkList;
-    linkList = new_;
-    return linkList;
+	 if(linkList->val == 0)
+	 {
+		  return initializeFirstEle(no, linkList);
+	 }
+
+	 struct node_ *new_ = malloc(sizeof(struct node_));
+	 new_->val = no; // or (*new_).val de reference
+	 new_->next = linkList;
+	 linkList = new_;
+	 return linkList;
 }
 
 struct node_ *pushTail_(int no, struct node_ *linkList)
 {
-    struct node_ *new_ = malloc(sizeof(struct node_));
-    new_->val = no;
-    // new_->next = NULL;
+	 if(linkList->val == 0)
+	 {
+		  return initializeFirstEle(no, linkList);
+	 }
 
-    struct node_ *curr = linkList;
-    while (curr != NULL)
-    {
-        printf("%d ", curr->val);
-        curr = curr->next;
-        /* code */
-    }
+	 struct node_ *new_ = malloc(sizeof(struct node_));
+	 new_->val = no;
+	 // new_->next = NULL;
 
-    // curr->next = new_;
-    curr = new_;
+	 struct node_ *curr = linkList;
+	 while (curr->next != NULL)
+	 {
+		  // printf("%d ", curr->val);
+		  curr = curr->next;
+		  /* code */
+	 }
 
-    return linkList = curr;
+	 curr->next = new_;
+	 // curr = new_;
+
+	 // linkList->next = curr;
+	 return linkList;
 }
 
 void print_(struct node_ *list)
@@ -48,19 +65,53 @@ void print_(struct node_ *list)
     
 }
 
-int main() {
-   struct node_ *list = malloc(sizeof(struct node_));
-   struct node_ *ls;
-   
-   // list->val = 1;
-   // list->next = NULL;
-   list = pushHead_(12, list);
-   list = pushHead_(16, list);
-   list = pushTail_(15, list);
-   list = pushTail_(19, list);
-   print_(list);
+void menu(struct node_ *list) {
+	 char input;
+	 printf("\nPlease enter\n a for head\n z for tail\n p for print the list\n q for quit: ");
+	 scanf("%c", &input);
+	 int in;
+
+	 switch(input) {
+		  case 'q': return;
+		  case 'a': 
+				printf("\nEnter value = ");
+				scanf("%d", &in);
+				list = pushHead_(in, list);
+				break;
+		  case 'z': 
+				printf("\nEnter value = ");
+				scanf("%d", &in);
+				pushTail_(in, list);
+				break;
+		  case 'p': 
+				print_(list);
+				break;
+		  default: 
+				printf("\nPlease enter a valid value a, z, p or q only!\n");
+				// break;
+	 }
+	 menu(list);
 }
+
+int main() {
+
+	 struct node_ *list = malloc(sizeof(struct node_));
+	 menu(list);
+	 /*
+	    list = pushHead_(12, list);
+	    list = pushHead_(16, list);
+	    pushTail_(15, list);
+	    pushTail_(19, list);
+	    print_(list);
+	    */
+}
+
 /*
+	 int a;
+	 char b;
+	 if(b == NULL) {
+	 printf("a = %d b = %c /n", a, b);
+	 }
 // Initialize nodes
 struct node *head;
 struct node *one = NULL;
