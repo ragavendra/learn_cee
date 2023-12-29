@@ -6,6 +6,10 @@
 #include <threads.h>
 #include <ctype.h>
 
+/*
+   gcc -Wall mem.c cus.c cus.h -o mem.o
+*/
+
 int main(int argc, char *argv[])
 {
 	 SharedVar = 6;
