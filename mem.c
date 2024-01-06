@@ -59,11 +59,11 @@ int main(int argc, char *argv[])
 	 // char *p = malloc(3 * sizeof(char));
 	 // char *p = "string";
 	 char p[] = "string";
-	 printf("Str :%12.3s: \n",  p);
+	 printf("Str :%12.3s: \n",  p); // 12 chars before and print 3 chars
 	 printf("Inttt :%d: \n",  atoi(p));
 
 	 char *a = p;
-	 *p = 'a';
+	 *(p + 1) = 'a';
 	 printf("Str %s \n",  a);
 //	 free(p);
 
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 	 memset(nos, 0, 10 * sizeof(int));
 	 for(int i = 0; i < 10; i++)
 	 {
-		  printf("No is %d\n");
+		  printf("No is %d\n", i);
 	 }
 
 	 // stores in heap, can be freed or ml
@@ -87,6 +87,7 @@ int main(int argc, char *argv[])
 	 printf("%d \n", &t);
 	 free(t);
 	 printf("%d \n", &t);
+	 printf("%s", t);
 	 t = "New str";
 	 printf("%s", t);
 }
