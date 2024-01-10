@@ -5,13 +5,53 @@
 #include <assert.h>
 #include <threads.h>
 #include <ctype.h>
+#define NKEYS 10
+typedef char *String;
 
 /*
    gcc -Wall mem.c cus.c cus.h -o mem.o
 */
 
+struct point {
+	 int a;
+	 int b;
+
+	 union {
+		  char e;
+		  unsigned d;
+	 };
+};
+
+struct key {
+	 char *word;
+	 int count;
+};
+
 int main(int argc, char *argv[])
 {
+	 // struct key keytab[NKEYS];
+	 struct key keytab[] = {
+		  { "auto", 0 }, // can be with or w/o braces
+		  "break", 0,
+		  "case", 0,
+		  "char", 0,
+		  "const", 0,
+		  "continue", 0,
+		  "default", 0,
+		  /* ... */
+		  "unsigned", 0,
+		  "void", 0,
+		  "volatile", 0,
+		  "while", 0
+	 };
+
+	 struct point pt = { 11, 12 };
+	 pt.d = -11;
+	 pt.e = 's';
+	 pt.a = 6;
+
+	 printf("d is %u and e is %c", pt.d, pt.e);
+
 	 SharedVar = 6;
 	 PrintVar(SharedVar);
 	 printf("Print args %d\n", SharedVar);
@@ -19,6 +59,13 @@ int main(int argc, char *argv[])
 	 {
 		  printf("Arg %d is %s\n", i, argv[i]);
 	 }
+
+	 float floa = 231.123;
+	 printf("Float is %.0f", floa);// no dec displayed here
+
+	 String str = "This is a str\n";
+
+	 printf("Typdef str is %s",  str);
 
 	 // fork(PrintVar(SharedVar));
 
