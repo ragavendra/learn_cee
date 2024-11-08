@@ -1,0 +1,500 @@
+   51  bind -r reverse-search-history
+   52  bind -P | grep reverse-search-history
+   53  bind -r reverse-search-history
+   54  bind -P | grep reverse-search-history
+   55  bind -P | grep search-history
+   56  bind -r forward-search-history
+   57  bind -P | grep search-history
+   58  bind -p | grep search-history
+   59  jobs
+   60  fg
+   61  jobs
+   62  bg
+   63  bind -p | grep search-history
+   64  bind -r forward-search-history
+   65  bind -p | grep search-history
+   66  bind -p | grep search-history
+   67  bind -p | grep search-history
+   68  bind -p | grep search-historybind
+   69  mv ~/.inputrc ~/.inputrc_ -f
+   70  vim ~/.inputrc
+   71  jobs
+   72  bind -p | grep search-history
+   73  bind '"\C-r": reverse-search-history'
+   74  bind -p | grep search-history
+   75  jobs
+   76  bg 1
+   77  jobs
+   78  fg
+   79  find / -perm /6000 -ls 2> /dev/null | less
+   80  find / -perm /6000 -ls 2> /dev/null
+   81  ls /var/log
+   82  auditctl -w /etc/passwd -p rwa
+   83  sudo auditctl -w /etc/passwd -p rwa
+   84  auditctl -l
+   85  sudo auditctl -l
+   86  ausearch -f /etc/passwd
+   87  cat /etc/passwd
+   88  cat /var/log/audit/audit.log
+   89  touch /var/log/audit/audit.log
+   90  sudo touch /var/log/audit/audit.log
+   91  ausearch -f /etc/passwd
+   92  sudo chmod 0600 /var/log/audit/audit.log
+   93  ausearch -f /etc/passwd
+   94  sudo ausearch -f /etc/passwd
+   95  ausearch -f /etc/passwd
+   96  sudo chmod 0640 /var/log/audit/audit.log
+   97  ausearch -f /etc/passwd
+   98  sudo ausearch -f /etc/passwd
+   99  sudo auditctl -W /etc/passwd -p rwa
+  100  sudo auditctl -l
+  101  cat passFile 
+  102   cat /etc/passwd
+  103  cat passFile 
+  104  paccache -r
+  105  pactree
+  106  ls
+  107  cat his | grep his
+  108  cat his | grep nice
+  109  nice
+  110  history > his.0
+  111  find / 2> /dev/null  -exec grep history-search-forward
+  112  find / 2> /dev/null -exec grep history-search-forward
+  113  vi
+  114  help vi
+  115  info vi
+  116  man vi
+  117  vi his
+  118  find / -perm -4000 2 > /dev/null
+  119  find / -perm -4000 2> /dev/null
+  120  find / -perm -4000 -ls 2> /dev/null 
+  121  find / -perm -2000 -ls 2> /dev/null 
+  122  find /home -name /.rhosts -ls 2> /dev/null 
+  123  find / -nouser  -ls 2> /dev/null 
+  124  find / -nogroup  -ls 2> /dev/null 
+  125  jobs
+  126  bg 
+  127  jobs
+  128  bg 1
+  129  jobs
+  130  120
+  131  jobs
+  132  fg 1
+  133  bind
+  134  ls
+  135  john passFile 
+  136  lemon
+  137  /find
+  138  curl -X POST -H "Content-Type, application/json" -d '{"latitude": "49.287718", "longitude": "-123.023214" }' $HOST:$PORT/jakartaee/rest/stops/nearme
+  139  john --help
+  140  man john
+  141  john passFile 
+  142  vim -p a b
+  143  vim a b
+  144  vim -O a b
+  145  man vim
+  146  vim -p a b
+  147  jobs
+  148  fg 3
+  149  vim -o a b
+  150  jobs
+  151  fg 4
+  152  vim -o a b
+  153  jobs
+  154  fg
+  155  vim -ex a b
+  156  jobs
+  157  top
+  158  john passFile &
+  159  top
+  160  top
+  161  ps -auc
+  162  ps -aux
+  163  ps -auc
+  164  ps --help
+  165  man ps
+  166  ps
+  167  jobs
+  168  htop
+  169  man ps
+  170  ps
+  171  ps -aux
+  172  ps -auc
+  173  ps -ax
+  174  ps -aux
+  175  ps -auc
+  176  ps aux
+  177  ps -x
+  178  jobs
+  179  ps -He
+  180  ps auxjf
+  181  ps axjf
+  182  ps aux
+  183  top
+  184  top
+  185  jobs
+  186  top
+  187  top
+  188  jobs
+  189  i
+  190  bash -c top
+  191  jobs
+  192  htop
+  193  jobs
+  194  fg
+  195  bash -c code
+  196  jobs
+  197  fg
+  198  jobs
+  199  fg 4
+  200  jobs
+  201  fg 2
+  202  jobs
+  203  bind -l
+  204  bind -p | grep search-history
+  205  jobs
+  206  bg 4
+  207  bg 4
+  208  jobs
+  209  ls
+  210  vim his.0
+  211  (code)
+  212  jobs
+  213  fg
+  214  fg
+  215  cpio
+  216  cpio --help
+  217  fg
+  218  cat /proc/pid/root
+  219  ls /proc/pid/root
+  220  ls /proc/
+  221  ls /proc/1/root 
+  222  cat /proc/1/root 
+  223  sudo cat /proc/1/root 
+  224  sudo ls /proc/1/root/
+  225  sudo ls /proc/3288288/root/
+  226   ls /proc/3288288/root/
+  227  ls /proc/3288288/root/
+  228  ls /proc/3288288/root/ -allt
+  229  ls /proc/ -allt
+  230  ls /proc/ -t
+  231  ls /proc/ -l
+  232  ls /proc/ -l | less
+  233  ls --help
+  234  ls --help 
+  235  ls --help | less
+  236  ls /proc/ -l --sort user | less
+  237  ls /proc/ -l --sort size | less
+  238  ls --help | less
+  239  man ls
+  240  ls /proc/ -l | grep scion
+  241  ls /proc/ -l | grep scion | less
+  242  ls /proc/ -l | less
+  243  chroot /tmp
+  244  chroot /home/scio
+  245  chroot /home/scion
+  246  jobs
+  247  fg
+  248  jornalctl -b
+  249  journalctl -b
+  250  fg
+  251  journalctl -f
+  252  journalctl -f
+  253  fg
+  254  journalctl /usr/lib/systemd/systemd
+  255  journalctl /usr/lib/systemd/systemd
+  256  journalctl -f /usr/lib/systemd/systemd
+  257  ls
+  258  journalctl -f /usr/lib/systemd/systemd
+  259  help vi
+  260  fg
+  261  print $SHLVL
+  262  fg
+  263  jobs
+  264  ps
+  265  journalctl _PID 3288288
+  266  fg
+  267  journalctl _PID=3288288
+  268  journalctl _PID=1
+  269  journalctl -f _PID=1
+  270  journalctl -p err..alert
+  271  journalctl -f err..alert
+  272  jobs
+  273  fg
+  274  journalctl --since "today" -g "UFW BLOCK" 
+  275  journalctl --since "today"
+  276  envsubst
+  277  envsubst --help
+  278  envsubst -v
+  279  envsubst -v $SHELL
+  280  envsubst -v $SHELL
+  281  echo $SHELL
+  282  fg
+  283  jobs
+  284  jobs
+  285  cd ..
+  286  ls
+  287  ls 
+  288  ls ~ 
+  289  pwd
+  290  ls ~/repos_
+  291  ls ~/repos
+  292  ls ~/repos -allt
+  293  df -h
+  294  du -hs
+  295  sudo pacman -Syu
+  296  sudo pacman -Ss
+  297  sudo pacman -Sc
+  298  df -h
+  299  du -hs /
+  300  du -hs / 2> 
+  301  du -hs / 2 > /dev/null
+  302  du -hs / 2 >/dev/null
+  303  du -hs / 2> /dev/null
+  304  du / -hs
+  305  du / -hs  2> /dev/null
+  306  du --help
+  307  du / -h -d 1  2> /dev/null
+  308  du /var -h -d 1  2> /dev/null
+  309  du /var/cache -h -d 1  2> /dev/null
+  310  du /home -h -d 1  2> /dev/null
+  311  du /home/scion/ -h -d 1  2> /dev/null
+  312  du --help
+  313  du /home/scion/ -h -d 1 -t +1M 2> /dev/null
+  314  ls ~/.dartServer/
+  315  ls ~/.dartServer/ -allt
+  316  ps
+  317  ps -a
+  318  ps -a
+  319  ps -au
+  320  ps -aux | grep teams
+  321  ls /opt
+  322  ls /opt/teams-for-linux/
+  323  du /home/scion/ -h -d 1 -t +1M 2> /dev/null
+  324  ls -allt ~/teams 
+  325  date
+  326  du /home/scion/ -h -d 1 -t +1M 2> /dev/null
+  327  mv ~/teams ~/teams_
+  328  ps -aux | grep teams
+  329  du /home/scion/ -h -d 1 -t +1M 2> /dev/null
+  330  rm -rf ~/teams_
+  331  ls ~/repos
+  332  ls ~/repos1
+  333  ls ~/repos1/DataConvergenceTool/
+  334  ls ~/repos_
+  335  mv ~/repos1/DataConvergenceTool ~/repos_
+  336  ls ~/repos1
+  337  rmdir ~/repos1
+  338  ls ~/.m2
+  339  ls ~/.m2/repository/
+  340  du /home/scion/ -h -d 1 -t +1M 2> /dev/null
+  341  sudo pacman -R dart
+  342  du /home/scion/ -h -d 1 -t +1M 2> /dev/null
+  343  dart
+  344  dart --version
+  345  ls ~/.m2/repository/
+  346  ls ~/.dartServer/
+  347  ls ~/.dartServer/ -allt
+  348  cd ~/repos
+  349  ls
+  350  wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.58.tar.xz
+  351  [200~cat /proc/sys/kernel/printK
+  352  cat /proc/sys/kernel/printK
+  353  cat /proc/sys/kernel/print
+  354  cat /proc/sys/kernel/printk
+  355  ls
+  356  tar -xvf linux-6.6.58.tar.xz 
+  357  ls
+  358  rm linux-6.6.58.tar.xz 
+  359  cd linux-6.6.58/
+  360  ls
+  361  vim Makefile 
+  362  sudo pacman -Syu cscope ctags]
+  363  sudo pacman -Syu cscope ctags
+  364  ls arch
+  365  ls arch/arm
+  366  make O=. ARCH=arm SUBARCH=omap2 COMPILED_SOURCE=1 cscope tags
+  367  echo $dir
+  368  emacs
+  369  e
+  370  jobs
+  371  sudo pacman -Ss lemon
+  372   pacman -Ss lemon
+  373  jobs
+  374  sudo pacman -Ss game
+  375  sudo pacman -Ss snes
+  376  sudo pacman -S snes9x
+  377  source ~/.inputrc
+  378  source ~/.inputrc
+  379  source /etc/inputrc
+  380  vim Makefile
+  381  vim Makefile
+  382  exit
+  383  exit
+  384  vi /tmp/bash-fc.vrLE6k
+  385  jobs
+  386  jobs
+  387  ls
+  388  grep err ls
+  389  grep err his_
+  390  grep his_ err
+  391  grep his_ es
+  392  vim Makefile
+  393  make pdfdocs
+  394  sudo pacman -S sphinx
+  395  sudo pacman -Ss sphinx
+  396  sudo pacman -S sphinx-buils
+  397  sudo pacman -S sphinx-buils
+  398  sudo pacman -S sphinx-build
+  399  sudo pacman -Ss sphinx-buils
+  400  sudo pacman -Ss sphinx-build
+  401  sudo pacman -S python-sphinx
+  402  make pdfdocs
+  403  sudo pacman -S xelatex
+  404  sudo pacman -S latex
+  405  sudo pacman -Ss xelatex
+  406  sudo pacman -S texlive-latex
+  407  make pdfdocs
+  408  make pdfdocs
+  409  sudo pacman -S graphviz
+  410  make pdfdocs
+  411  make htmldocs
+  412  sudo pacman -R graphviz
+  413  sudo pacman -R texlive-latex
+  414  sudo pacman -R python-sphinx
+  415  sudo pacman -
+  416  sudo pacman -SC
+  417  sudo pacman -Sc
+  418  make htmldocs
+  419  vim README 
+  420  epoll
+  421  man epoll
+  422  ps -aux | grep syslogd
+  423  ps -aux | grep syslog
+  424  ps -aux | grep log
+  425  ulimit
+  426  ulimit
+  427  man ulimit
+  428  mmap
+  429  mmap()
+  430  ls -l | sort -k5n | less
+  431  pa -aux
+  432  ps -aux
+  433  ps -aux | less
+  434  ps -aux | less
+  435  time
+  436  time ps
+  437  time ps -aux
+  438  time ls -allt
+  439  time ps -aux
+  440  ls -allt /proc | more
+  441  ls -allt /proc/83992 | more
+  442  ls -allt /proc/83993 | more
+  443  ls -allt /proc/83920 | more
+  444  touch /proc/83920/some
+  445  sudo touch /proc/83920/some
+  446  ls -allt /proc/83920 | more
+  447  touch /proc/83920/some
+  448  man syscalls
+  449  man 2 syscalls
+  450  fopen
+  451  man 2 syscalls
+  452  fsopen
+  453  man lseek
+  454  man syscalls
+  455  eax
+  456  ls /sys/
+  457  getcpu
+  458  getppid
+  459  /lib/lib.so.6
+  460  ls /lib/lib.*
+  461  ls /lib/
+  462  ls /lib/ | grep lib
+  463  /lib/libc.so.6
+  464  /lib/libc.so.6 
+  465  ls 
+  466  ldd /usr/bin/ls | grep libc
+  467  ls /usr/bin/ls -allt
+  468  ls -allt /lib/libc.so.6 
+  469  /usr/lib/libc.so.6 
+  470  /lib/libc.so.6 
+  471  ldd /usr/bin/ls
+  472  jobs
+  473  fg
+  474  fg 2
+  475  fg 1
+  476  man open
+  477  man 2 open
+  478  man errno
+  479  cal
+  480  jobs
+  481  exit
+  482  ls
+  483  cd ..
+  484  ls
+  485  cd ..
+  486  ls
+  487  cd ..
+  488  ls
+  489  cd 96b21d32-a96a-494f-9519-e67ecf34e977/
+  490  ls
+  491  ls scion/
+  492  ls scion/repos/
+  493  ls -allt scion/repos/
+  494  cd scion/repos/linux-6.6.58/
+  495  clear
+  496  ls
+  497  vim README 
+  498  exit
+  499  whois 38.141.211.103
+  500  tracepath 38.141.211.103
+  501  cd ..
+  502  cd learn_cee/
+  503  ls
+  504  cat wget-log 
+  505  ls
+  506  vim mem.c
+  507  ctags
+  508  ls tags
+  509  fg
+  510  ctags --recurse=yes --exclude=.git --exclude=BUILD --exclude=.svn --exclude=vendor/* --exclude=node_modules/* --exclude=db/* --exclude=log/*
+  511  ls
+  512  ls -allty
+  513  ls -allt
+  514  chmod +x .ctags
+  515  ctags
+  516  cat ctags
+  517* jcat tags
+  518  fg
+  519  vim -t struct
+  520  vim -t SharedVar
+  521  fg
+  522  fg
+  523  fg
+  524  vim -S sess
+  525  vim mem.c 
+  526  vim -S sess
+  527  vim mem.c 
+  528  nasm
+  529  sudo pacman -Syu nasm
+  530  nasm -v
+  531  sudo pacman -Ss qemu
+  532  qemu-system-x86_64 
+  533  nesm
+  534  nasm
+  535  mkdir peachos
+  536  cd peachos/
+  537  vim boot.asm
+  538  nasm -f bin ./boot.asm -o ./boot.bin
+  539  ndisasm boot.bin 
+  540  ls -allt
+  541  qemu-system-x86_64  -hds boot.bin 
+  542  qemu-system-x86_64  -hda boot.bin 
+  543  fg
+  544  nasm -f bin ./boot.asm -o ./boot.bin
+  545  qemu-system-x86_64  -hda boot.bin 
+  546  jobs
+  547  fg 1
+  548  ls
+  549  cat history >> hist
+  550  history >> hist
