@@ -18,3 +18,23 @@ ctags --recurse=yes --exclude=.git --exclude=BUILD --exclude=.svn --exclude=vend
 # for PeachOS
 
 Install nasm and qemu to load the binary in bios. Check cmd logs.
+
+# hello.asm assembly program
+
+To generate object file
+
+```
+nasm -f elf hello.asm
+```
+
+To link the obj file and generate the executable
+
+```
+ld -m elf_i386 -s -o hello hello.o
+```
+
+Run program
+
+```
+./hello
+```
