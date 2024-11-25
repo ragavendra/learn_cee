@@ -50,8 +50,14 @@ void print_(struct node_ *list)
 
 int main() {
    struct node_ *list = malloc(sizeof(struct node_));
+   struct node_ list_;
+
+   struct node_ *list_1;
+   list_1 = malloc(sizeof(struct node_));
+   list_ = *list_1;
+
    struct node_ *ls;
-   
+
    // list->val = 1;
    // list->next = NULL;
    list = pushHead_(12, list);

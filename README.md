@@ -38,3 +38,4 @@ Run program
 ```
 ./hello
 ```
+make -C ~/repos_/linux/ M=/home/scion/repos/learn_cee/dri modules
