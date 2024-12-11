@@ -4,31 +4,28 @@ import java.util.LinkedList;
 public class crDelHeap {
 
     public static LinkedList<Integer> outPut = new LinkedList();
-    // ([ 1, 2, 1, 6, 3, 4, 3 ]);
+    public static LinkedList<Integer> sortedList = new LinkedList();
 
 	// min heapify
     public static void heapifyBelow(int index) {
         int leftChild = 2 * index + 1;
         int rightChild = 2 * index + 2;
 
-        // System.out.println("L " + outPut.get(leftChild) + " < " + outPut.get(index));
         if (leftChild < outPut.size() && outPut.get(leftChild) < outPut.get(index)) {
-			// System.out.println("L " + outPut.get(leftChild) + " < " + outPut.get(index));
             int temp = outPut.get(leftChild);
             outPut.set(leftChild, outPut.get(index));
             outPut.set(index, temp);
             heapifyBelow(leftChild);
         }
 
-        // System.out.println("L " + outPut.get(rightChild) + " < " + outPut.get(index));
         if (rightChild < outPut.size() && outPut.get(rightChild) < outPut.get(index)) {
-			// System.out.println("L " + outPut.get(rightChild) + " < " + outPut.get(index));
             int temp = outPut.get(rightChild);
             outPut.set(rightChild, outPut.get(index));
             outPut.set(index, temp);
             heapifyBelow(rightChild);
         }
     }
+
     public static void RemoveEle(int pos) {
 		// remove from pos
         int last = outPut.removeLast();
@@ -40,8 +37,8 @@ public class crDelHeap {
 		heapifyBelow(pos);
 	}
 
-    public static void PrintOutput() {
-		for(Integer ele: outPut){
+    public static void PrintOutput(LinkedList<Integer> lis) {
+		for(Integer ele: lis){
 			System.out.println(ele);
 		}
 	}
@@ -71,7 +68,7 @@ public class crDelHeap {
 		}
     }
 
-	// Remove ele
+	// Remove from position
     public static void main_(String[] args) {
 
 		// [10, 11, 8, 7, 6 ,5 , 4, 3, 2, 1]
@@ -91,10 +88,23 @@ public class crDelHeap {
 		RemoveEle(1);
 		// heapifyBelow(0);
 
-        PrintOutput();
+        PrintOutput(outPut);
     }
 
 	// Create Heap/ Heapify
+    public static void mainn(String[] args) {
+
+		Integer[] arr = { 2, 3, 4, 6, 1, 3, 1 };
+
+		for (Integer i = 0; i < arr.length; i++) {
+            insertEle(arr[i]);
+        }
+
+		PrintOutput(outPut);
+		/* Exp op 1, 2, 1, 6, 3, 4, 3 */
+    }
+
+	// Heap sort
     public static void main(String[] args) {
 
 		Integer[] arr = { 2, 3, 4, 6, 1, 3, 1 };
@@ -103,8 +113,27 @@ public class crDelHeap {
             insertEle(arr[i]);
         }
 
-		PrintOutput();
-		/* Exp op 1, 2, 1, 6, 3, 4, 3 */
+        while (outPut.size() > 1) {
+
+            // root is lowest, so swap with last or pop it to sor arr
+            sortedList.add(outPut.get(0));
+
+            // set last ele to root and remove it
+            outPut.set(0, outPut.removeLast());
+
+            LinkedList<Integer> tempList = (LinkedList<Integer>) outPut.clone();
+            outPut.clear();
+
+            // heapify or insert as an heap
+            for (Integer elem : tempList) {
+                insertEle(elem);
+            }
+        }
+
+		// add last or root ele
+        sortedList.add(outPut.remove());
+
+        PrintOutput(sortedList);
     }
 
 }
