@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 // Java program to Del from heap position
-public class delRootHeap {
+public class crDelHeap {
 
     public static LinkedList<Integer> outPut = new LinkedList();
     // ([ 1, 2, 1, 6, 3, 4, 3 ]);
