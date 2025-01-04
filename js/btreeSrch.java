@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 // Java program to Search a sorted array using Binary search
 // For heap creation, no use of Node class
@@ -41,8 +43,12 @@ public class btreeSrch {
 		int lowerBound = 0, mid;
 		int upperBound = arr.length - 1;
 
+		Arrays.parallelSort(arr);
+		PriorityQueue<Integer> pq = new PriorityQueue();
+
 		while (upperBound >= lowerBound) { 
-			mid = (upperBound + lowerBound)/2;
+			// mid = (upperBound + lowerBound)/2;
+			mid = lowerBound + (upperBound - lowerBound)/2;
 
 			if(arr[mid] == srchNo)
 				return mid;
