@@ -38,4 +38,13 @@ Run program
 ```
 ./hello
 ```
+```
 make -C ~/repos_/linux/ M=/home/scion/repos/learn_cee/dri modules
+```
+
+# Lex analyzer and yacc
+
+```
+cc lex.yy.c -o first
+lex samp.l
+```

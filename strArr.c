@@ -20,65 +20,81 @@
 #include	<ctype.h>
 #include	<string.h>
 
+int someMethod(int no){
+	return 1;
+}
+
 int main(){
-	 // char arr[] = { "This is a string" };
-	 // char arr2[] = "This is a string";
-	 char arr3[3] = "as" ;
-	 arr3[0] = 'c';
+	int a = 0;
 
-	 if(strcpy(arr3, "hi")){
-		  printf("\narr3 is now %s", arr3);
-	 }
+	{
+		int a;
+	}
 
-	 // gets(arr3);
-	 puts(arr3);
+	// char arr[] = { "This is a string" };
+	// char arr2[] = "This is a string";
+	char arr3[3] = "as" ;
+	arr3[0] = 'c';
 
-	 // char arr4[] = {'a', 'b'}; 
-	 // char arr4[10] = {'a', 'b'};  // only first two will be init
+	{
+		int a = 3;
+	}
 
-	 char firstName[10];
-	 printf("\nFirst name without init is: %c", firstName[3]);
-	 char lastName[10] = {}; // init to \0 which is null and nothing will print
-	 printf("\nLast name after init is: %c", lastName[3]);
-	 printf("\nEnter first name: ");
-	 scanf("%s", firstName);
+	if(strcpy(arr3, "hi")){
+		printf("\narr3 is now %s", arr3);
+		// printf("\narr3 is now %d", someMethod 2);
+	}
 
-	 printf("\nEnter last name: ");
-	 scanf("%s", lastName);
-	 printf("\nYour full name: %s", strcat(firstName, lastName));
-	 printf("\nlastName length is %ld", strlen(lastName));
-	 printf("\nlastName size in bytes %ld", sizeof(lastName));
+	// gets(arr3); // takes space in string unlike scanf
+	puts(arr3);
+	// strlen(arr3); length of string and not the \o term
 
-	 // if(isalpha(lastName[0]))
-		  printf("\nFirst char of lastName is an alphabet %d",isalpha(lastName[0]));
+	// char arr4[] = {'a', 'b'}; 
+	// char arr4[10] = {'a', 'b'};  // only first two will be init
 
-	 // if(isdigit(lastName[0]))
-		  printf("\nFirst char of lastName is a digit %d",isdigit(lastName[0]));
+	char firstName[10];
+	printf("\nFirst name without init is: %c", firstName[3]);
+	char lastName[10] = {}; // init to \0 which is null and nothing will print
+	printf("\nLast name after init is: %c", lastName[3]);
+	printf("\nEnter first name: ");
+	scanf("%s", firstName);
 
-	 // if(isalnum(lastName[0]))
-		  printf("\nFirst char of lastName is an alphabet or a digit %d",isalnum(lastName[0]));
+	printf("\nEnter last name: ");
+	scanf("%s", lastName);
+	printf("\nYour full name: %s", strcat(firstName, lastName));
+	printf("\nlastName length is %ld", strlen(lastName));
+	printf("\nlastName size in bytes %ld", sizeof(lastName));
 
-	 // if(isupper(lastName[0]))
-		  printf("\nFirst char of lastName is upper case %d",isupper(lastName[0]));
+	// if(isalpha(lastName[0]))
+	printf("\nFirst char of lastName is an alphabet %d",isalpha(lastName[0]));
 
-	 // if(islower(lastName[0]))
-		  printf("\nFirst char of lastName is lower case %d",islower(lastName[0]));
+	// if(isdigit(lastName[0]))
+	printf("\nFirst char of lastName is a digit %d",isdigit(lastName[0]));
 
-	 printf("\nFirst char of firstName to lower case %c", tolower(firstName[0]));
+	// if(isalnum(lastName[0]))
+	printf("\nFirst char of lastName is an alphabet or a digit %d",isalnum(lastName[0]));
 
-	 printf("\nFirst char of firstName to upper case %c", toupper(firstName[0]));
+	// if(isupper(lastName[0]))
+	printf("\nFirst char of lastName is upper case %d",isupper(lastName[0]));
 
-	 // if(isspace(firstName[0]))
-		  printf("\nIs a space.%d",isspace(' '));
+	// if(islower(lastName[0]))
+	printf("\nFirst char of lastName is lower case %d",islower(lastName[0]));
 
-	 for(int i=0; i<strlen(firstName); i++) {
-		  firstName[i] = toupper(firstName[i]);
-	 }
+	printf("\nFirst char of firstName to lower case %c", tolower(firstName[0]));
 
-	 firstName[0] = 75;
-	 printf("\nFirst char of firstName for asc ii 75 %c", firstName[0]); // asc ii for K is 75
+	printf("\nFirst char of firstName to upper case %c", toupper(firstName[0]));
 
-	 printf("\nfirstName in upper case. %s", firstName);
-	 // almost all methods return +ve or 1 or true or its ASCII value
-	 // 0 or false
+	// if(isspace(firstName[0]))
+	printf("\nIs a space.%d",isspace(' '));
+
+	for(int i=0; i<strlen(firstName); i++) {
+		firstName[i] = toupper(firstName[i]);
+	}
+
+	firstName[0] = 75;
+	printf("\nFirst char of firstName for asc ii 75 %c", firstName[0]); // asc ii for K is 75
+
+	printf("\nfirstName in upper case. %s", firstName);
+	// almost all methods return +ve or 1 or true or its ASCII value
+	// 0 or false
 }
