@@ -1,44 +1,155 @@
-/*
- * =====================================================================================
- *
- *       Filename:  strArr.c
- *
- *    Description:  String array 
- *
- *        Version:  1.0
- *        Created:  2025-01-03 04:29:09 PM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Ragavendra N (rn), ragavendra.bn@gmail.com
- *        Company:  Garden Systems, Vancouver
- *
- * =====================================================================================
- */
-
 #include	<stdio.h>
+#include	<stdlib.h>
 #include	<ctype.h>
+#include	<math.h>
 #include	<string.h>
+#include <stdbool.h>
+#define PI 22.0e6/7.0e6
+#define OOPS "This is %d"
+#define _PI acos(-1.0)
 
-int someMethod(int no){
-	return 1;
+union a {
+	int b;
+};
+
+int *someMetho(int **x, char *, union a *);
+
+int *someMethod_(){
+	int *c;
+	return c;
 }
 
-int main(){
-	int a = 0;
+union a someMethod(int no){
+	union a c;
+	return c;
+}
+
+int main(int count, char *vector[]){
+	someMethod(3);
+	// int a = 0;
 
 	{
-		int a;
+		// int a = 3;
+		long double pi = 22.0e7/7.0e7;
+		printf("Value of pi is calculated %g and  math const %g\n", PI, M_PI);
 	}
+
 
 	// char arr[] = { "This is a string" };
 	// char arr2[] = "This is a string";
-	char arr3[3] = "as" ;
-	arr3[0] = 'c';
+	char arr3[3] = "asd" ;
+	const char arr6[] = "asd is %d" ;
+	printf("arr is %s and %c\n", arr3, arr3[2]);
+	// fgets();
+
+	char arr4[100];
+	// arr4 = "sfsf";
+	const char *one = "sample str | one";
+	char tw[30] = "sfd ";
+	char *two = "sample str two 2.344j";
+	// char *two = &tw[0];
+	// strncat(tw, one, sizeof(tw) - 1);
+	strncat(tw, one, strlen(one));
+	// strcpy(tw, one);
+	printf("Str tw now %s\n", tw);
+	printf("strcmp tw and one is now %d\n", strcmp(tw, one));
+	printf("oe is in tw %s\n", strstr(tw, "oe")); // index of searched str or null
+	printf("z is in tw %s\n", strchr(tw, 'z'));
+	printf("| tok in tw %s\n", strtok(tw, "|")); // space, comma and period
+	printf("| tok in tw %s\n", strtok(tw, "|")); // call many times till NULL to get each str
+	printf("atol is %ld\n", atol("2"));
+	printf("atof is %f\n", atof("2.6"));
+	printf("atoll is %lld\n", atoll("2.6"));
+	printf("strcmp is %d\n", strcmp(tw, one));
+	char *dou = "3.29";
+	printf("strtod is %g\n", strtod(dou, &two));
+	printf("strcasecmp is %d\n", strcasecmp(tw, one)); // case insensitive comparison
+	// strcmpcase();
+
+	// arr3 [0] = 'c';
 
 	{
-		int a = 3;
+		// const int PI = 3;
+		int a[2][3] = {1, 2, 3, 4, 5};
+		// int a[2][3] = {{1, 2, 3}, 
+		//			    {4, 5, 6}};
+		int i = 0, j = 0;
+		int *k = &i;
+
+		for (i = 0; i < 2; i++){
+			for (j = 0; j < 3; j++)
+				printf("%d ", a[i][j]);
+			printf("Finish row %d\n", i);
+		}
+
+		printf("\n");
 	}
+
+	{
+		int k;
+
+		for (k = -3; k < -5; k++)
+			printf("Hello\n");
+	}
+
+	{
+		double k = 0;
+
+		for (k = 0.0; k < 3.0; k++);
+		printf("%lf\n", k);
+	}
+
+	{
+		int x = 0;
+
+		if (x++)
+			printf("true\n");
+		else if (x == 1)
+			printf("false\n");
+	}
+
+	{
+		int x = 1, y = 0, z = 5;
+		int a = x && y && z++;
+
+		// z is not printed - short circuit evaluation - as bool val is already known before evaluation - 0 && ? = 0
+		printf("\nZ is %d and A is %d", z, z);
+	}
+
+	int x;
+
+	{
+		if (x)
+			printf("\nhi");
+		else
+			printf("\nhow are you, x is %d", x);
+	}
+
+	{
+		/*
+		   int a = 3;
+		   double c = 3.4e+4; // 3.4 * 10 x to pow of 4
+		   _Bool _val = false; // C89 has this type
+		   bool val = false;
+
+		// short, long and unsigned are adjectives with int float
+		// long float sss;
+		long long erwd = 24234234L;
+		long long _erwd = 24234234l;
+		*/
+		double c = 3.4e+4; // 3.4 * 10 x to pow of 4
+		printf("\nc is  %e and %g", c, c);
+		float num = 3.325423;
+		printf("\nnum is %7.3f and %f", num, num);
+
+	}
+
+	enum priColor { Red, Pink, Grey };
+	// enum priColor one, two = Pink; // int val corresp in list start from 0, which is 1 here
+	enum dire { left , up, right=1, down }; // left is 0, 1, 11 and 12
+	enum dire up_ = up;
+	// char ascii = 65; // or 'c' or '\n' \oOO \xhh \v vert tab
+	printf("\nenum up is now %u and %u and right %u", up_, up, right); // up and right have same value 1
 
 	if(strcpy(arr3, "hi")){
 		printf("\narr3 is now %s", arr3);
