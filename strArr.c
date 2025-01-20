@@ -24,6 +24,24 @@ union a someMethod(int no){
 	return c;
 }
 
+void * somePtrMeth(int * one, float * two, char *arr) {
+// void somePtrMeth(int * one, float * two, char arr[]) {
+	++*one;
+	--*two;
+	printf("\nOne and two and arr are %d and %f and %s\n", *one, *two, arr);
+	return arr;
+}
+
+void swap(int *const a, int *const b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void square(int *no){
+	printf("\nSquare of no is %d", *no * *no);
+}
+
 int main(int count, char *vector[]){
 	someMethod(3);
 	// int a = 0;
@@ -37,21 +55,31 @@ int main(int count, char *vector[]){
 
 	// char arr[] = { "This is a string" };
 	// char arr2[] = "This is a string";
-	char arr3[3] = "asd" ;
-	const char arr6[] = "asd is %d" ;
-	printf("arr is %s and %c\n", arr3, arr3[2]);
+	char arr3[3] = "asd";
+	const char arr6[] = "asd is %d";
+	printf("\narr is %s and %c\n", arr3, arr3[2]);
 	// fgets();
 
 	char arr4[100];
 	// arr4 = "sfsf";
-	const char *one = "sample str | one";
+	char one_[] = "sample str | one";
+	char const *one = one_; // only *one is const and cannot be changed, but one and val var one_ can be
+	const int ne_ = 4;
+	int *const ne = &ne_; // only ne stored value (addr) cannot be changed
+	int nee = 7;
+	// ne = &nee; // not poss
+	// ne_ = 3;
+	printf("\nptr *ne is %d", *ne);
 	char tw[30] = "sfd ";
 	char *two = "sample str two 2.344j";
+	const int some;
+
+	one = tw;
 	// char *two = &tw[0];
 	// strncat(tw, one, sizeof(tw) - 1);
 	strncat(tw, one, strlen(one));
 	// strcpy(tw, one);
-	printf("Str tw now %s\n", tw);
+	printf("\nStr tw now %s\n", tw);
 	printf("strcmp tw and one is now %d\n", strcmp(tw, one));
 	printf("oe is in tw %s\n", strstr(tw, "oe")); // index of searched str or null
 	printf("z is in tw %s\n", strchr(tw, 'z'));
@@ -65,6 +93,67 @@ int main(int count, char *vector[]){
 	printf("strtod is %g\n", strtod(dou, &two));
 	printf("strcasecmp is %d\n", strcasecmp(tw, one)); // case insensitive comparison
 	// strcmpcase();
+
+	/*
+	// two or three steps 
+	a. declare pointer and assign NULL, 
+	b. assign address of var or anoter ptr and c. assign value (optional)
+	*/
+	// scanf("%s", arr4);
+	// int * poi = NULL;
+	int no = 3;
+	// int *noo = 37;
+	// int *poi = &no;
+	int *poi = &no;
+	// poi = &no;
+	int *poi2 = poi;
+	// *poi = 4;
+	// printf("poi value is %d its address is %p or %p \n", *poi, &poi, (void *)&poi);
+	printf("poi value is %d its vals address is %p and its address is %p and size is %d\n", *poi, poi, (void*)&poi, (int) sizeof(poi)); // 4 bytes int on 32 bit compiler and 8 bytes on 64 bit compiler
+	// printf("poi value is %d its address %p \n", *poi, (void*)poi);
+	float *fl = NULL;
+	float fval = 3.242;
+	fl = &fval;
+	*fl = 8.324;
+
+	int d = 7;
+	float f = 8.34;
+	char c = 'e';
+	void * pt = NULL;
+	pt = &d;
+	printf("\npt is %d", *(int *)pt);
+	pt = &f;
+	printf("\npt is %f", *(float *)pt);
+	pt = &c;
+	printf("\npt is %c", *(char *)pt);
+
+	int inarr[] = {0, 3, 7, 8};
+	// int *inar = inarr;
+	int *inar = NULL;
+	inar = inarr; // or like below
+	inar = &inarr[0];
+
+	if(inarr[3] == *(inarr + 3))
+		printf("\nBoth refer to same val");
+
+	swap(&d, &no);
+	square(&d);
+	printf("\nd is now %d and no is %d", d, no);
+	printf("\n%d", sizeof(void *));
+	int a = 15;
+	void *ptr = (int *)&a;
+	printf("\n%d", *(int *)ptr);
+	// printf("%d", *ptr);
+
+	int b[5] = {1, 2, 3, 4, 5};
+	int *p = b;
+	printf("\n%d\t%d\t%d\t%d\t", *p, b[0], b, p);
+
+	printf("b[3] is %d", *(b+3));
+	p++; // will now pt to p[1]
+
+	char *str = (char *)somePtrMeth(poi,fl, arr3); 
+	int sstr = *(int *)somePtrMeth(poi,fl, arr3); 
 
 	// arr3 [0] = 'c';
 
