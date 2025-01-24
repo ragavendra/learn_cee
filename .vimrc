@@ -96,8 +96,11 @@ map \f :YcmCompleter FixIt<CR>
 " visual mode
 vmap \c :s/^/\/\/<CR>
 " vmap \uc :s/^\/\//<CR>
-vmap \uc :s/\/\/[?<Space>?<Tab>]/<Tab>/<CR>
+vmap \uc :s/\/\/[?<Space>?<Tab>]/<CR>
 " '<,'>s/^/\/*/g - block comment
+
+nmap t :TagbarToggle<CR>
+
 " set timeout for key combs
 " set timeoutlen 2000
 
@@ -107,7 +110,8 @@ vmap \uc :s/\/\/[?<Space>?<Tab>]/<Tab>/<CR>
 " autocmd BufWritePost *.c,*.h silent! !ctags . &
 
 " include path as of this machine for ctags generation
-set path=/run/media/scion/PART2/repos/linux/include/
+set path+=/run/media/scion/PART2/repos/linux/include
+" set path+=/usr/include
 " set tags+=/run/media/scion/PART2/repos/linux/tags
 
 " java specific for YCM
@@ -179,6 +183,7 @@ Plugin 'L9'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'sainnhe/edge'
+Plugin 'preservim/tagbar'
 
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}

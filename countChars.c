@@ -89,38 +89,39 @@ int main(int ct, char *strr[]){
 
 	peach b, c; // b is pointer but c is not. #define only replaces text
 
+	// this is working
+	struct date datePtrr = { 12, tue, 2024, calloc(3, sizeof(char)) };
+	// datePtrr.some = "ste here"; //  pblm line as this is stack mem
+	printf("Enter txt to store in dyn heap!\n");
+	scanf("%s", datePtrr.some);
+	free(datePtrr.some);
+
 	struct date birthday;
 	birthday.day = tue;
 	birthday.year = 2024;
 	birthday.month = 12;
 	// not sure if I can assign heap mem like this, has to be date *
 	// birthday.some = calloc(2, sizeof(char));
-//	char *soo;
-//	birthday.some = soo; //  need to assign char var
-//	birthday.some = calloc(2, sizeof(char));
-	// birthday.some = "ed";
-	// free(birthday.some); // free mem
-	// birthday.some = NULL; // fix dangling ptr
+
+	char *soo = calloc(2, sizeof(char));
+	birthday.some = soo; //  need to assign char var
+	birthday.some = calloc(2, sizeof(char));
 
 	// ptr to struct
-	// struct date * datePtr = { 12, 3, 2024 };
+	// struct date * datePtr = { 12, 3, 2024, calloc(3, sizeof(char)) };
 	struct date * datePtr = &birthday;
-	// struct date * datePtr;
 	(*datePtr).day = 21; // or
 	datePtr->day = 30;
-	char *so = calloc(3, sizeof(char));
-	datePtr->some = calloc(3, sizeof(char));
-	datePtr->some = so;
-	datePtr->some = "de3";
+
+	datePtr->some = "de3"; // stack memory
 	printf("dateptr->some is %s\n", datePtr->some);
 
-	// char *cdd = (*dateptr).(*some);
-	// char *cdd = dateptr->some;
-	// free((*dateptr).some); // not sure why it is giving invalid ptr
-	// free(dateptr->some); // not sure why it is giving invalid ptr
-	// free(soo); // attempt to call free on non heap object
+	// free must succeed to confirm heap memory free
+	free(soo); // attempt to call free on non heap object
+
 	// free(&soo); // attempt to call free on non heap object
-	free(so); // not sure why it is giving invalid ptr w/o using so var
+	// free(so); // not sure why it is giving invalid ptr w/o using so var
+	// free(birthday.some); // not sure why it is giving invalid ptr
 	printf("Code here!\n");
 	datePtr->some = NULL;
 	// s_gets(str, 13);
