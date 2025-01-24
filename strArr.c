@@ -116,6 +116,7 @@ int main(int count, char *vector[]){
 	fl = &fval;
 	*fl = 8.324;
 
+	// void ptrs
 	int d = 7;
 	float f = 8.34;
 	char c = 'e';
@@ -139,7 +140,8 @@ int main(int count, char *vector[]){
 	swap(&d, &no);
 	square(&d);
 	printf("\nd is now %d and no is %d", d, no);
-	printf("\n%d", sizeof(void *));
+	printf("\nvoid * size is uns long %d", sizeof(void *));
+	printf("\nuns long size %d", sizeof(unsigned long));
 	int a = 15;
 	void *ptr = (int *)&a;
 	printf("\n%d", *(int *)ptr);

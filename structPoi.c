@@ -24,7 +24,7 @@ void printItem(const struct item * itmPtr){
 	printf("Product name %s, price %f, quantity %d and amount %f\n", itmPtr->itemName, itmPtr->price, itmPtr->qty, itmPtr->amount);
 }
 
-int imain(){
+int main(){
 	struct item *itmPtr;
 	itmPtr->itemName = malloc(sizeof(char) * NAMELEN);
 
@@ -50,12 +50,22 @@ void func(struct temp s)
 	printf("%d\t", s.a);
 }
 
-int main(){
+int imain(){
 	long c = -1;
+
+	// void ptrd
+	void * po = &c; // no incompatible pointer type warning for void *
+	// char * cc = &c;
+	char ch = 'c';
+	po = &ch;
+	long l = *(long *)po; // assigning ch value as long - lol
 
 	void * p = (void *)c;
 
 	printf("Void * is now %ld", (unsigned long) p);
+
+	void (*fp_func)(struct temp);
+	// fp_func = &func;
 }
 
 int main_3(){

@@ -61,20 +61,26 @@ int main(int ct, char *strr[]){
 	strcpy(str, str2);
 	printf("Str is now %s\n", str);
 
+	/*
 	printf("Enter empl details - Name, Hiredate dd mm yyyy and Salary\n");
 	struct empl some;
 	scanf("%s\n", some.name); 
 	scanf("%d %d %d\n", &some.hiredate.day, &some.hiredate.month, &some.hiredate.year); 
 	scanf("%f", &some.salary); 
 	// scanf("%s %d %f", some.name, &some.hiredate, &some.salary); 
-	printf("Empl details - %s, %d and %f\n", some.name, some.hiredate, some.salary);
+	printf("Empl details - %s, %d and %f\n", some.name, some.hiredate.year, some.salary);
 	// strcpy(some.name, "Name Here");
+	*/
 
+	long l = 10L;
 	lltype ab;
-	*ab = 10L;
+	int *cc = NULL;
+	// *cc = 1; not possible assignment. First needs to be assigned to an address
+	cc = &ct;
+	ab = &l;
 	char * ptt;
 	int * pt;
-	pt = (ptr_to_func) ptt;
+	// pt = (ptr_to_func) ptt; check this
 
 	// sample func pointer
 	int (*func_countChars)(const char *);
@@ -87,19 +93,35 @@ int main(int ct, char *strr[]){
 	birthday.day = tue;
 	birthday.year = 2024;
 	birthday.month = 12;
-	birthday.some = calloc(2, sizeof(char));
-	birthday.some = "ed";
-	free(birthday.some); // free mem
-	birthday.some = NULL; // fix dangling ptr
+	// not sure if I can assign heap mem like this, has to be date *
+	// birthday.some = calloc(2, sizeof(char));
+//	char *soo;
+//	birthday.some = soo; //  need to assign char var
+//	birthday.some = calloc(2, sizeof(char));
+	// birthday.some = "ed";
+	// free(birthday.some); // free mem
+	// birthday.some = NULL; // fix dangling ptr
 
 	// ptr to struct
 	// struct date * datePtr = { 12, 3, 2024 };
 	struct date * datePtr = &birthday;
+	// struct date * datePtr;
 	(*datePtr).day = 21; // or
 	datePtr->day = 30;
+	char *so = calloc(3, sizeof(char));
 	datePtr->some = calloc(3, sizeof(char));
+	datePtr->some = so;
 	datePtr->some = "de3";
-	free(datePtr->some);
+	printf("dateptr->some is %s\n", datePtr->some);
+
+	// char *cdd = (*dateptr).(*some);
+	// char *cdd = dateptr->some;
+	// free((*dateptr).some); // not sure why it is giving invalid ptr
+	// free(dateptr->some); // not sure why it is giving invalid ptr
+	// free(soo); // attempt to call free on non heap object
+	// free(&soo); // attempt to call free on non heap object
+	free(so); // not sure why it is giving invalid ptr w/o using so var
+	printf("Code here!\n");
 	datePtr->some = NULL;
 	// s_gets(str, 13);
 
