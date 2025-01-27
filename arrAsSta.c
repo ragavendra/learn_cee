@@ -1,3 +1,5 @@
+//  I don't loop except for display
+
 #include <stdio.h>
 #define LEN 10
 
@@ -12,6 +14,7 @@ void exit();
 int main() {
 	
 	int ch, it;
+	printf("Stack %d\n", ch);
 
 	do {
 		printf("Stack is ready. Press 1 for PUSH, 2 for POP, 3 for DISPLAY and 4 for EXIT\n");
@@ -42,20 +45,6 @@ void push(int it) {
 
 	// *(arr + inde) = &it;
 	arr[inde++] = it;
-/* 
-
-	int i;
-	do{
-		if(*(arr + i) == 0) {
-			// *(arr + i) = it;
-			*arr[i] = it;
-			return;
-		}
-
-		i++;
-	}while(i < LEN);
-
-*/
 }
 
 void pop() {
@@ -82,11 +71,11 @@ void disp() {
 		return;
 	}
 
-	for(int i = 0; i < LEN; i++) {
+	for(int i = 0; i < inde; i++) {
 		printf("%d ", *(arr + i));
 	}
 	
-	printf("\n");
+	printf("<-- head\n");
 }
 
 
