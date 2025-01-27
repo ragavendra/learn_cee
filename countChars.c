@@ -81,12 +81,12 @@ int main(int ct, char *strr[]){
 	char * ptt;
 	int * pt;
 	// pt = (ptr_to_func) ptt; check this
-
-	// sample func pointer
-	int (*func_countChars)(const char *);
-	func_countChars = &countChars;
-	func_countChars("sdfssf");
-
+//
+//	// sample func pointer
+//	int (*func_countChars)(const char *);
+//	func_countChars = &countChars;
+//	func_countChars("sdfssf");
+//
 	peach b, c; // b is pointer but c is not. #define only replaces text
 
 	// this is working
