@@ -77,6 +77,7 @@ int main(int ct, char *strr[]){
 	int *cc = NULL;
 	// *cc = 1; not possible assignment. First needs to be assigned to an address
 	cc = &ct;
+	
 	ab = &l;
 	char * ptt;
 	int * pt;
