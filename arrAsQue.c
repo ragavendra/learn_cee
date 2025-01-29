@@ -51,14 +51,22 @@ int main_() {
 	// return -1;
 }
 
+void swap(int *a, int *b){
+	int temp;
+	temp = *b;
+	*b = *a;
+	*a = temp;
+}
+
 void moveToStart(int it){
 	int ind = 0;
 	for (int i = tail; i < LEN; i++) {
-		arr[ind++] = arr[i];
+		// arr[ind++] = arr[i]; doesn't update arr[i] to 0
+		swap(&arr[ind++], &arr[i]);
 	}
 	arr[ind++] = it;
 	tail = 0;
-	disp();
+	// disp();
 //	
 //	// loop to move eles to beg of arr
 //	do {
@@ -71,13 +79,6 @@ void moveToStart(int it){
 	// arr[head] = arr[head+1];
 }
 
-void swap(int *a, int *b){
-	int temp;
-	temp = *b;
-	*b = *a;
-	*a = temp;
-}
-
 void push(int it) {
 	if(tail == 0 && head == LEN) {
 		// if(*arr[LEN - 1] != 0) {
@@ -88,7 +89,7 @@ void push(int it) {
 	// *(arr + head) = &it;
 	if(head < LEN){}
 	else { // head == LEN
-		printf("Head is same as len?\n");
+		// printf("Head is same as len?\n");
 		if(tail != 0) {
 			moveToStart(it);
 		}
