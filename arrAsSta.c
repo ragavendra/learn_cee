@@ -1,17 +1,29 @@
 //  I don't loop except for display
 
 #include <stdio.h>
+#include <assert.h>
 #define LEN 10
 
 int arr[LEN] = {};
 int inde = 0;
 void push(int it);
-void pop();
+int pop();
 void disp();
 void exit();
 
+// check the implementation
+void main() {
+	push(10);
+	push(20);
+	assert(pop() == 20);
+	push(30);
+	assert(pop() == 30);
+	// assert(1 == 3);
+}
+
+
 // head is in inde
-int main() {
+int _main() {
 	
 	int ch, it;
 	printf("Stack %d\n", ch);
@@ -47,22 +59,28 @@ void push(int it) {
 	arr[inde++] = it;
 }
 
-void pop() {
+int pop() {
 	if(arr[0] == 0) {
 		printf("Stack empty, nothng to pop\n");
-		return;
+		return -1;
 	}
+
+	int it;
 
 	// add 0 to head
 	if(inde > 0) {
 		inde--;
+		it = arr[inde];
 		*(arr + inde) = 0;
 		// arr[inde - 1] = 0;
 	}
 	else {
 		printf("Pop first ele of arr\n");
+		it = arr[inde];
 		*(arr + inde) = 0;
 	}
+
+	return it;
 }
 
 void disp() {
